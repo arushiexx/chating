@@ -199,7 +199,7 @@ body {
     background: var(--glass);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
-    padding: 44px 28px 32px;
+    padding: 24px 20px 20px;
     text-align: center;
     overflow: hidden;
     backdrop-filter: blur(30px);
@@ -249,15 +249,15 @@ body {
 .avatar-wrapper {
     position: relative;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .avatar-ring {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 155px;
+    height: 155px;
     border-radius: 50%;
-    padding: 6px;
+    padding: 5px;
     box-shadow:
         0 0 40px rgba(255, 45, 149, 0.35),
         0 0 80px rgba(255, 113, 181, 0.2);
@@ -291,15 +291,15 @@ body {
 
 .online-badge {
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 45, 149, 0.1);
     border: 1px solid rgba(255, 45, 149, 0.4);
     border-radius: 20px;
-    padding: 5px 16px;
+    padding: 4px 14px;
     z-index: 10;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 800;
     color: #ff71b5;
     display: flex;
