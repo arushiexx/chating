@@ -117,7 +117,7 @@ body {
 .profile-section {
     text-align: center;
     padding: 0 20px 24px;
-    margin-top: -90px;
+    margin-top: -120px;
     position: relative;
     z-index: 2;
 }
@@ -129,11 +129,11 @@ body {
 }
 
 .profile-avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 240px;
+    height: 320px;
+    border-radius: 24px;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center top;
     border: 4px solid var(--bg);
     box-shadow:
         0 0 0 3px var(--accent),
@@ -147,8 +147,8 @@ body {
 
 .status-dot {
     position: absolute;
-    bottom: 6px;
-    right: 6px;
+    bottom: 16px;
+    right: 16px;
     width: 18px;
     height: 18px;
     background: var(--green);
@@ -978,8 +978,8 @@ body {
     .cover-banner { height: 180px; }
 
     .profile-avatar {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 250px;
     }
 
     .profile-name { font-size: 1.5rem; }
