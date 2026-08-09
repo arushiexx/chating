@@ -789,14 +789,12 @@ body {
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.4);
     margin-bottom: 8px;
-    overflow: hidden;
 }
 
 .qr-image {
-    width: 220px; 
-    height: 220px;
-    object-fit: cover;
-    transform: scale(1.15);
+    width: 260px; 
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
     display: block;
 }
