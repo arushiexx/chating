@@ -40,8 +40,8 @@ html {
 
 body {
     font-family: var(--font);
-    background-color: #020205;
-    background-image: radial-gradient(circle at 50% 50%, #0a0a1a 0%, #020205 100%);
+    background-color: #05020a;
+    background-image: radial-gradient(circle at 50% 0%, #150a21 0%, #05020a 100%);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -196,7 +196,8 @@ body {
    ============================================================ */
 .hero-card {
     position: relative;
-    background: var(--glass);
+    background: linear-gradient(135deg, rgba(255, 45, 149, 0.15), rgba(10, 10, 25, 0.8), rgba(0, 240, 255, 0.1));
+    background-size: 200% 200%;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
     padding: 24px 20px 20px;
@@ -207,7 +208,7 @@ body {
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    animation: hero-float 0.9s ease-out;
+    animation: hero-float 0.9s ease-out, gradient-shift 10s ease infinite;
     transform-style: preserve-3d;
     perspective: 800px;
 }
@@ -226,6 +227,12 @@ body {
 @keyframes hero-float {
     from { opacity: 0; transform: translateY(40px) rotateX(5deg); }
     to { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-glow {
@@ -327,13 +334,13 @@ body {
 }
 
 .hero-name {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
     margin-bottom: 8px;
-    color: #fff;
-    text-shadow:
-        0 0 20px rgba(255, 45, 149, 0.6),
-        0 0 40px rgba(255, 113, 181, 0.3);
+    background: linear-gradient(to right, #ffffff, #ff71b5, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 45, 149, 0.4);
     letter-spacing: -0.01em;
 }
 
