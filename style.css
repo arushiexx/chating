@@ -1015,3 +1015,32 @@ body {
         margin-top: 10px;
     }
 }
+
+/* Floating Demo Button */
+.floating-demo-btn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    background: linear-gradient(135deg, #e056fd, #be2edd);
+    color: #fff;
+    padding: 24px 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -5px 0 20px rgba(224, 86, 253, 0.6);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-right: none;
+    cursor: pointer;
+    z-index: 1000;
+    text-align: center;
+    white-space: nowrap;
+    animation: sidePulse 1.5s infinite alternate;
+}
+@keyframes sidePulse {
+    from { box-shadow: -2px 0 10px rgba(224, 86, 253, 0.4); }
+    to { box-shadow: -10px 0 25px rgba(224, 86, 253, 0.8); }
+}
