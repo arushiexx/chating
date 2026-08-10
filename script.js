@@ -142,14 +142,8 @@ function openModal(planName, price) {
 function handleFileUpload(event) {
     const file = event.target.files[0];
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('previewImg').src = e.target.result;
-            document.getElementById('uploadPreview').style.display = 'block';
-            document.getElementById('uploadArea').style.display = 'none';
-            document.getElementById('whatsappBtn').style.display = 'flex';
-        };
-        reader.readAsDataURL(file);
+        document.getElementById('uploadArea').style.display = 'none';
+        document.getElementById('whatsappBtn').style.display = 'flex';
     }
 }
 
