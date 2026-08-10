@@ -124,10 +124,6 @@ const planIcons = {
 function openModal(planName, price) {
     currentSelectedPlan = planName;
     currentAmount = price;
-
-    document.getElementById('selectedPlan').textContent = planName;
-    document.getElementById('planPrice').textContent = `₹${price}`;
-    document.getElementById('modalIcon').textContent = planIcons[planName] || '💎';
     
     // Reset upload state (removed)
 
