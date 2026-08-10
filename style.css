@@ -116,7 +116,7 @@ body {
    ============================================================ */
 .profile-section {
     text-align: center;
-    padding: 0 20px 24px;
+    padding: 0 20px 10px;
     margin-top: -120px;
     position: relative;
     z-index: 2;
@@ -180,7 +180,7 @@ body {
 .profile-bio {
     font-size: 0.88rem;
     color: var(--text-2);
-    margin-bottom: 20px;
+    margin-bottom: 4px;
     line-height: 1.5;
 }
 
@@ -345,6 +345,21 @@ body {
 .plan-card.premium:hover {
     border-color: rgba(255,215,0,0.3);
     box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,215,0,0.15);
+}
+
+#planVideoDemo {
+    border: 2px solid #e056fd;
+    box-shadow: 0 0 15px rgba(224, 86, 253, 0.5);
+    animation: premiumPulse 2s infinite alternate;
+}
+
+@keyframes premiumPulse {
+    from {
+        box-shadow: 0 0 10px rgba(224, 86, 253, 0.3);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(224, 86, 253, 0.7);
+    }
 }
 
 .plan-badge {
@@ -997,6 +1012,6 @@ body {
     .plans-section,
     .trust-section,
     .reviews-section {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
