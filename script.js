@@ -124,19 +124,34 @@ const planIcons = {
 function openModal(planName, price) {
     currentSelectedPlan = planName;
     currentAmount = price;
-    
-    // Reset upload state (removed)
 
     const modal = document.getElementById('paymentModal');
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
+    
+    // Push state so back button closes modal instead of leaving site
+    history.pushState({ modal: true }, '');
 }
 
 function closeModal() {
     const modal = document.getElementById('paymentModal');
+    if (!modal.classList.contains('show')) return;
     modal.classList.remove('show');
     document.body.style.overflow = '';
 }
+
+// Back button closes modal
+window.addEventListener('popstate', function(e) {
+    const modal = document.getElementById('paymentModal');
+    if (modal.classList.contains('show')) {
+        closeModal();
+    }
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 
 function handleOverlayClick(event) {
     if (event.target === document.getElementById('paymentModal')) {
