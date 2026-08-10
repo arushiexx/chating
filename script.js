@@ -125,12 +125,32 @@ function openModal(planName, price) {
     currentSelectedPlan = planName;
     currentAmount = price;
 
+    // Reset upload state
+    document.getElementById('paymentScreenshot').value = '';
+    document.getElementById('uploadPreview').style.display = 'none';
+    document.getElementById('uploadArea').style.display = 'block';
+    document.getElementById('whatsappBtn').style.display = 'none';
+
     const modal = document.getElementById('paymentModal');
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
     
     // Push state so back button closes modal instead of leaving site
     history.pushState({ modal: true }, '');
+}
+
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImg').src = e.target.result;
+            document.getElementById('uploadPreview').style.display = 'block';
+            document.getElementById('uploadArea').style.display = 'none';
+            document.getElementById('whatsappBtn').style.display = 'flex';
+        };
+        reader.readAsDataURL(file);
+    }
 }
 
 function closeModal() {
