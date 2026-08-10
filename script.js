@@ -129,12 +129,7 @@ function openModal(planName, price) {
     document.getElementById('planPrice').textContent = `₹${price}`;
     document.getElementById('modalIcon').textContent = planIcons[planName] || '💎';
     
-    // Reset upload state
-    document.getElementById('paymentScreenshot').value = '';
-    document.getElementById('uploadPreview').style.display = 'none';
-    const uploadArea = document.getElementById('uploadArea');
-    if (uploadArea) uploadArea.style.display = 'block';
-    document.getElementById('whatsappBtn').style.display = 'none';
+    // Reset upload state (removed)
 
     const modal = document.getElementById('paymentModal');
     modal.classList.add('show');
@@ -153,29 +148,6 @@ function handleOverlayClick(event) {
     }
 }
 
-function handleFileUpload(event) {
-    const file = event.target.files[0];
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const preview = document.getElementById('uploadPreview');
-    const previewImg = document.getElementById('previewImg');
-    const uploadArea = document.getElementById('uploadArea');
-    
-    if (file) {
-        // Show image preview
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            previewImg.src = e.target.result;
-            preview.style.display = 'block';
-            uploadArea.style.display = 'none';
-            whatsappBtn.style.display = 'flex';
-        };
-        reader.readAsDataURL(file);
-    } else {
-        preview.style.display = 'none';
-        uploadArea.style.display = 'block';
-        whatsappBtn.style.display = 'none';
-    }
-}
 
 function sendToWhatsApp() {
     const phoneNumber = "918826028193";
